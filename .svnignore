@@ -1,0 +1,10 @@
+# Set or update with
+#   $ svn propset svn:ignore -RF .svnignore .
+challenge_data_20110429.tar.gz
+listings.html
+listings.txt
+obj
+products.html
+products.txt
+results.txt
+tags

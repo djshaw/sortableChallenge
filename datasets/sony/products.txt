@@ -1,0 +1,2 @@
+{"product_name":"Sony-Cyber-shot-DSC-W180","manufacturer":"Sony","model":"DSC-W180","family":"Cyber-shot","announced-date":"2009-05-31T20:00:00.000-04:00"}
+{"product_name":"Sony-W580","manufacturer":"Sony","model":"W580","family":"Cybershot ","announced-date":"2011-02-15T19:00:00.000-05:00"}

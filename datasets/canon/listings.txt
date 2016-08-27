@@ -1,0 +1,18 @@
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera with 12x Wide Angle Optical Image Stabilized Zoom with 3.0-Inch LCD","manufacturer":"Canon Canada","currency":"CAD","price":"199.96"}
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera with 12x Wide Angle Optical Image Stabilized Zoom with 3.0-Inch LCD","manufacturer":"Canon Canada","currency":"CAD","price":"209.00"}
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera with 12x Wide Angle Optical Image Stabilized Zoom with 3.0-Inch LCD","manufacturer":"Canon","currency":"USD","price":"190.00"}
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera with 12x Wide Angle Optical Image Stabilized Zoom with 3.0-Inch LCD","manufacturer":"Canon","currency":"USD","price":"199.25"}
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera + 8GB Deluxe Accessory Kit","manufacturer":"Canon","currency":"USD","price":"254.95"}
+{"title":"Canon PowerShot SX130IS 12.1 MP Digital Camera + 16GB Deluxe Accessory Kit","manufacturer":"Canon","currency":"USD","price":"267.95"}
+{"title":"Canon PowerShot SX130 IS Digital Camera (12.1 Megapixel, 12x Zoom, 3.0 inch LCD Screen)","manufacturer":"Canon","currency":"GBP","price":"129.00"}
+{"title":"CANON PowerShot SX130 IS - silver","manufacturer":"Canon","currency":"GBP","price":"194.54"}
+{"title":"CANON PowerShot SX130 IS - silver","manufacturer":"Canon","currency":"GBP","price":"189.04"}
+{"title":"Canon - PowerShot SX130 IS - Appareil photo numérique - 12,1 Mpix - Zoom optique 12x - Noir","manufacturer":"Canon","currency":"EUR","price":"152.12"}
+{"title":"Canon - PowerShot SX130 IS - Appareil photo numérique - 12,1 Mpix - Zoom optique 12x - Noir","manufacturer":"Canon","currency":"EUR","price":"187.68"}
+{"title":"Canon - PowerShot SX130 IS - Appareil photo numérique - 12,1 Mpix - Zoom optique 12x - Argent","manufacturer":"Canon","currency":"EUR","price":"179.01"}
+{"title":"Canon - PowerShot SX130 IS - Appareil photo numérique - 12,1 Mpix - Zoom optique 12x - Argent","manufacturer":"Canon","currency":"EUR","price":"189.22"}
+{"title":"CANON PowerShot SX130 IS - silver + Carte mémoire SDHC 8 Go + Chargeur 8H LR6 (AA) + LR035 (AAA) V002 + 4 Batteries NiMH LR6 (AA) 2600 mAh","manufacturer":"Canon","currency":"EUR","price":"276.99"}
+{"title":"CANON PowerShot SX130 IS - silver + Carte mémoire SDHC 8 Go + Chargeur 8H LR6 (AA) + LR035 (AAA) V002 + 4 Batteries NiMH LR6 (AA) 2600 mAh + Etui Pix Medium + poche noir","manufacturer":"Canon","currency":"EUR","price":"286.99"}
+{"title":"CANON PowerShot SX130 IS - silver + Carte mémoire SDHC 4 Go + Chargeur 8H LR6 (AA) + LR035 (AAA) V002 + 4 Batteries NiMH LR6 (AA) 2600 mAh + Etui Pix Medium + poche noir","manufacturer":"Canon","currency":"EUR","price":"279.99"}
+{"title":"CANON PowerShot SX130 IS - silver + Carte mémoire SDHC 8 Go + Chargeur 8H LR6 (AA) + LR035 (AAA) V002 + 4 Batteries NiMH LR6 (AA) 2600 mAh","manufacturer":"Canon","currency":"EUR","price":"276.99"}
+{"title":"CANON PowerShot SX130 IS - noir + Carte mémoire SDHC 4 Go + Chargeur 8H LR6 (AA) + LR035 (AAA) V002 + 4 Batteries NiMH LR6 (AA) 2600 mAh","manufacturer":"Canon","currency":"EUR","price":"261.99"}

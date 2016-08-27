@@ -1,0 +1,1 @@
+{"product_name":"Samsung_ST10","listings":[{"title":"Samsung ST10 Appareil photo numÃ©rique","price":"132.50","manufacturer":"Samsung","currency":"EUR"}]}
