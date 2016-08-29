@@ -71,7 +71,7 @@ class WorkerThread
 	}
     }
 
-    public Map< Product, Map< Listing, Integer > > Get_results()
+    public Map< Product, Map< Listing, Integer > > GetResults()
     {
 	return m_results;
     }
@@ -164,7 +164,7 @@ public class MatchingEngine
 		}
 	    }
 
-	    WorkerThread workerThread = new WorkerThread( this, m_matcherFactory.Get_matcher(), products, workUnit );
+	    WorkerThread workerThread = new WorkerThread( this, m_matcherFactory.GetMatcher(), products, workUnit );
 	    threads.add( workerThread );
 	    workerThread.start();
 	}
@@ -186,7 +186,7 @@ public class MatchingEngine
 		throw new RuntimeException( e );
 	    }
 
-	    Map< Product, Map< Listing, Integer > > threadResults = thread.Get_results();
+	    Map< Product, Map< Listing, Integer > > threadResults = thread.GetResults();
 	    for( Product product : threadResults.keySet() )
 	    {
 		results.get( product ).putAll( threadResults.get( product ) );

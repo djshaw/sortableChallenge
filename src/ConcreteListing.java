@@ -1,9 +1,6 @@
-// TODO: convert all tabs to spaces, in this file and all others
 public class ConcreteListing 
-	implements Listing
+    implements Listing
 {
-    protected int m_hash;
-
     protected String m_title;
     protected String m_manufacturer;
     
@@ -24,37 +21,25 @@ public class ConcreteListing
 	m_manufacturer = manufacturer;
 	m_currency = currency;
 	m_price = price;
-
-	int result = 17;
-	for( String s : java.util.Arrays.asList( Get_title(), Get_manufacturer(), Get_currency(), Get_price() ) )
-	{
-	    result = 37 * result + s.hashCode();
-	}
-	m_hash = result;
     }
     
-    public String Get_title()
+    public String GetTitle()
     {
 	return m_title;
     }
 
-    public String Get_manufacturer()
+    public String GetManufacturer()
     {
 	return m_manufacturer; }
 
-    public String Get_currency()
+    public String GetCurrency()
     {
 	return m_currency;
     }
 
-    public String Get_price()
+    public String GetPrice()
     {
 	return m_price;
-    }
-
-    public int hashCode()
-    {
-	return m_hash;
     }
 
     public String toString()

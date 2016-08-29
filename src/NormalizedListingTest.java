@@ -9,16 +9,16 @@ public class NormalizedListingTest
 	NormalizedListing nl = new NormalizedListing( new LowercaseNormalizer(), new ConcreteListing( "A", "B", "CAD", "0.00" ) );
 
 	// Check that everything is normalized
-	assertEquals( "a", nl.Get_title() );
-	assertEquals( "b", nl.Get_manufacturer() );
-	assertEquals( "CAD", nl.Get_currency() );
-	assertEquals( "0.00", nl.Get_price() );
+	assertEquals( "a", nl.GetTitle() );
+	assertEquals( "b", nl.GetManufacturer() );
+	assertEquals( "CAD", nl.GetCurrency() );
+	assertEquals( "0.00", nl.GetPrice() );
 
 	// Make sure we can still get the parent listing
-	assertEquals( "A", nl.Get_parent_listing().Get_title() );
-	assertEquals( "B", nl.Get_parent_listing().Get_manufacturer() );
-	assertEquals( "CAD", nl.Get_parent_listing().Get_currency() );
-	assertEquals( "0.00", nl.Get_parent_listing().Get_price() );
+	assertEquals( "A", nl.GetParentListing().GetTitle() );
+	assertEquals( "B", nl.GetParentListing().GetManufacturer() );
+	assertEquals( "CAD", nl.GetParentListing().GetCurrency() );
+	assertEquals( "0.00", nl.GetParentListing().GetPrice() );
     }
 }
 

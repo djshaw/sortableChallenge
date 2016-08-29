@@ -27,7 +27,7 @@ public class MatchingProgress
     public void Matched( Listing listing, Map< Product, Integer > products )
     {
 	m_matchProgress += 1;
-	int currentProgress = (int)((m_matchProgress * 100) / m_listingCount );
+	int currentProgress = (m_matchProgress * 100) / m_listingCount;
 	if( currentProgress > m_printedProgress )
 	{
 	    m_printedProgress = currentProgress;

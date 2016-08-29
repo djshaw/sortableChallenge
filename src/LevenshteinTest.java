@@ -27,64 +27,90 @@ public class LevenshteinTest
     @Test
     public void testSubstringMatch()
     {
-	assertEquals( Levenshtein.substringMatch( null, null ), new TreeSet() );
-	assertEquals( Levenshtein.substringMatch( null, "" ), new TreeSet() );
-	assertEquals( Levenshtein.substringMatch( "", null ), new TreeSet() );
-	assertEquals( Levenshtein.substringMatch( "", "" ), new TreeSet() );
+	assertEquals( Levenshtein.substringMatch( null, null ), new TreeSet< Levenshtein.LevenshteinMatch >() );
+	assertEquals( Levenshtein.substringMatch( null, "" ), new TreeSet< Levenshtein.LevenshteinMatch >() );
+	assertEquals( Levenshtein.substringMatch( "", null ), new TreeSet< Levenshtein.LevenshteinMatch >() );
+	assertEquals( Levenshtein.substringMatch( "", "" ), new TreeSet< Levenshtein.LevenshteinMatch >() );
 
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "a", 0, 0, 1 ) ) ),
-		      Levenshtein.substringMatch( "a", "a" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "a", 0, 0, 1 ) ) ),
+	    Levenshtein.substringMatch( "a", "a" ) );
 
 	// Repetition breaks substring matching because we have [aa]aa, a[aa]a, aa[aa]
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "aaaa", 0, 0, 4 ) ) ),  // aaaa
-		      Levenshtein.substringMatch( "aa", "aaaa" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "aaaa", 0, 0, 4 ) ) ),  // aaaa
+	    Levenshtein.substringMatch( "aa", "aaaa" ) );
 
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "abab", 0, 0, 2 ),
-						  new Levenshtein.LevenshteinMatch( "abab", 0, 2, 4 ) ) ),
-		      Levenshtein.substringMatch( "ab", "abab" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "abab", 0, 0, 2 ),
+			       new Levenshtein.LevenshteinMatch( "abab", 0, 2, 4 ) ) ),
+	    Levenshtein.substringMatch( "ab", "abab" ) );
 
 	// In the middle
 	assertEquals( "abba", "c abba c".substring( 2, 6 ) ); // to sanity check my expection of substring
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "c abba c", 1, 2, 6 ) ) ), // abba
-		      Levenshtein.substringMatch( "aba", "c abba c" ) ); 
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "c abba c", 1, 2, 6 ) ) ), // abba
+	     Levenshtein.substringMatch( "aba", "c abba c" ) ); 
 
 	// Two identical approximate matches
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "abbcabbc", 1, 0, 4 ), // abbc
-						  new Levenshtein.LevenshteinMatch( "abbcabbc", 1, 4, 8 ) ) ), // abbc 
-		      Levenshtein.substringMatch( "abc", "abbcabbc" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "abbcabbc", 1, 0, 4 ), // abbc
+			       new Levenshtein.LevenshteinMatch( "abbcabbc", 1, 4, 8 ) ) ), // abbc 
+	    Levenshtein.substringMatch( "abc", "abbcabbc" ) );
 
 	// Common suffix
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "xxx abbb xxx", 1, 4, 8 ) ) ), // abbb
-		      Levenshtein.substringMatch( "cbbb", "xxx abbb xxx" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "xxx abbb xxx", 1, 4, 8 ) ) ), // abbb
+	    Levenshtein.substringMatch( "cbbb", "xxx abbb xxx" ) );
 
 	// Common prefix 
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "xxx bbba xxx", 1, 4, 8 ) ) ), // bbbc
-		      Levenshtein.substringMatch( "bbbc", "xxx bbba xxx" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "xxx bbba xxx", 1, 4, 8 ) ) ), // bbbc
+	    Levenshtein.substringMatch( "bbbc", "xxx bbba xxx" ) );
 
 	
 	// No character matches
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "b", 3, 0, 1 ) ) ), // b
-	              Levenshtein.substringMatch( "foo", "b" ) );
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "ba", 3, 0, 2 ) ) ), // ba
-		      Levenshtein.substringMatch( "foo", "ba" ) );
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "bar", 3, 0, 3 ) ) ), // bar
-		      Levenshtein.substringMatch( "foo", "bar" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "b", 3, 0, 1 ) ) ), // b
+	    Levenshtein.substringMatch( "foo", "b" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "ba", 3, 0, 2 ) ) ), // ba
+	    Levenshtein.substringMatch( "foo", "ba" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( new Levenshtein.LevenshteinMatch( "bar", 3, 0, 3 ) ) ), // bar
+	    Levenshtein.substringMatch( "foo", "bar" ) );
 
 	// Random test cases of strings I was investigating from the challenge 
 	// data
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "canon powershot sx130is 12",
-										    1,
-										    16,
-										    23 ) ) ),
-		      Levenshtein.substringMatch( "sx130 is",
-						  "canon powershot sx130is 12" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( 
+		    new Levenshtein.LevenshteinMatch( "canon powershot sx130is 12",
+						      1,
+						      16,
+						      23 ) ) ),
+	    Levenshtein.substringMatch( "sx130 is",
+					"canon powershot sx130is 12" ) );
 
-	assertEquals( new TreeSet( Arrays.asList( new Levenshtein.LevenshteinMatch( "canon powershot sd300 4mp digital elph camera with 3x optical zoom",
-										    1,
-										    18,
-										    21 ) ) ),
-		      Levenshtein.substringMatch( "600",
-						  "canon powershot sd300 4mp digital elph camera with 3x optical zoom" ) );
+	assertEquals( 
+	    new TreeSet< Levenshtein.LevenshteinMatch >( 
+		Arrays.asList( 
+		    new Levenshtein.LevenshteinMatch( "canon powershot sd300 4mp digital elph camera with 3x optical zoom",
+						      1,
+						      18,
+						      21 ) ) ),
+	    Levenshtein.substringMatch( "600",
+					"canon powershot sd300 4mp digital elph camera with 3x optical zoom" ) );
     }
 
     // I'm aware that it looks a little redicuclus to be testing test code 

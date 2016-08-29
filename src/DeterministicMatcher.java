@@ -10,17 +10,17 @@ public class DeterministicMatcher
      */
     protected static Levenshtein.LevenshteinMatch expandMatchToWordBoundary( Levenshtein.LevenshteinMatch match )
     {
-	int score = match.Get_score();
+	int score = match.GetScore();
 
-	int lhs = match.Get_start();
-	for( ; lhs > 0 && match.Get_image().charAt( lhs - 1 ) != ' '; lhs -= 1, score += 1 ) 
+	int lhs = match.GetStart();
+	for( ; lhs > 0 && match.GetImage().charAt( lhs - 1 ) != ' '; lhs -= 1, score += 1 ) 
 	{ }
 
-	int rhs = match.Get_end();
-	for( ; rhs < match.Get_image().length() && match.Get_image().charAt( rhs ) != ' '; rhs += 1, score += 1 )
+	int rhs = match.GetEnd();
+	for( ; rhs < match.GetImage().length() && match.GetImage().charAt( rhs ) != ' '; rhs += 1, score += 1 )
 	{ }
 
-	return new Levenshtein.LevenshteinMatch( match.Get_image(), score, lhs, rhs );
+	return new Levenshtein.LevenshteinMatch( match.GetImage(), score, lhs, rhs );
     }
 
     protected Collection< Levenshtein.LevenshteinMatch > expandMatchesToWordBoundary( Collection< Levenshtein.LevenshteinMatch > matches )
@@ -41,16 +41,16 @@ public class DeterministicMatcher
 	// very least, we care about words. Thus, after generating substring
 	// matches, inflate the matches so they exist on word boundaries.
 	Collection< Levenshtein.LevenshteinMatch > manufacturer_matches = 
-	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.Get_manufacturer(), listing.Get_title() ) );
+	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.GetManufacturer(), listing.GetTitle() ) );
 
 	Collection< Levenshtein.LevenshteinMatch > other_manufacturer_matches = 
-	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.Get_manufacturer(), listing.Get_manufacturer() ) );
+	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.GetManufacturer(), listing.GetManufacturer() ) );
 
 	Collection< Levenshtein.LevenshteinMatch > model_matches = 
-	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.Get_model(), listing.Get_title() ) );
+	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.GetModel(), listing.GetTitle() ) );
 
 	Collection< Levenshtein.LevenshteinMatch > family_matches = 
-	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.Get_family(), listing.Get_title() ) );
+	    expandMatchesToWordBoundary( Levenshtein.substringMatch( product.GetFamily(), listing.GetTitle() ) );
 
 	// Potential improivement: Don't consider something a match if it's
 	// a close match for another product. For instance a listing with an 
@@ -58,18 +58,18 @@ public class DeterministicMatcher
 	// and "WS-110". In this case, we could use cost to determine which 
 	// product we should match to.
 
-	int model_score = model_matches.iterator().next().Get_score();
+	int model_score = model_matches.iterator().next().GetScore();
 
-	int lowest_manufacturer_score = manufacturer_matches.iterator().next().Get_score();
+	int lowest_manufacturer_score = manufacturer_matches.iterator().next().GetScore();
 	if( other_manufacturer_matches.size() > 0 ) 
 	{
-	    lowest_manufacturer_score = Math.min( manufacturer_matches.iterator().next().Get_score(),
-						  other_manufacturer_matches.iterator().next().Get_score() );
+	    lowest_manufacturer_score = Math.min( manufacturer_matches.iterator().next().GetScore(),
+						  other_manufacturer_matches.iterator().next().GetScore() );
 	}
 
 	int family_score = 0;
-	if( product.Get_family() != null && !product.Get_family().isEmpty() ) {
-	    family_score = family_matches.iterator().next().Get_score();
+	if( product.GetFamily() != null && !product.GetFamily().isEmpty() ) {
+	    family_score = family_matches.iterator().next().GetScore();
 	}
 	return model_score
 	     + lowest_manufacturer_score

@@ -8,33 +8,33 @@ public class NormalizedListing extends WrappedListing
 			      Listing	 listing )
     {
 	m_listing = listing;
-	m_normalizedTitle = normalizer.Normalize( m_listing.Get_title() );
-	m_normalizedManufacturer = normalizer.Normalize( m_listing.Get_manufacturer() );
+	m_normalizedTitle = normalizer.Normalize( m_listing.GetTitle() );
+	m_normalizedManufacturer = normalizer.Normalize( m_listing.GetManufacturer() );
     }
 
-    public Listing Get_parent_listing()
+    public Listing GetParentListing()
     {
 	return m_listing;
     }
 
-    public String Get_title()
+    public String GetTitle()
     {
 	return m_normalizedTitle;
     }
 
-    public String Get_manufacturer()
+    public String GetManufacturer()
     {
 	return m_normalizedManufacturer;
     }
 
-    public String Get_currency()
+    public String GetCurrency()
     {
-	return m_listing.Get_currency();
+	return m_listing.GetCurrency();
     }
 
-    public String Get_price()
+    public String GetPrice()
     {
-	return m_listing.Get_price();
+	return m_listing.GetPrice();
     }
 
     public String toString()

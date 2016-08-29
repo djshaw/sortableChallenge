@@ -12,8 +12,6 @@ import java.util.Set;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-// TODO: make sure everything works on a fresh checkout
-// TODO: normalize use of _ in identifiers
 public class Main
 {
     static private Map< String, String > g_stringReplacerNormalizerMap = new HashMap< String, String >();
@@ -81,7 +79,7 @@ public class Main
 	System.err.println( "\tjava Main [--debug] $PRODUCTS_FILE $LISTINGS_FILE" );
     }
 
-    protected static Normalizer Get_normalizer()
+    protected static Normalizer GetNormalizer()
     {
 	return g_normalizer;
     }
@@ -99,7 +97,7 @@ public class Main
 	// manufacturer, model, family, and announced-date fields and that they are all 
 	// strings
 	return new NormalizedProduct(
-	    Get_normalizer(),
+	    GetNormalizer(),
 	    new ConcreteProduct( (String) o.get( "product_name" ), 
 				 (String) o.get( "manufacturer" ), 
 				 (String) o.get( "model" ), 
@@ -120,7 +118,7 @@ public class Main
 	// manufacturer, currency, and price fields and that they are all 
 	// strings
 	return new NormalizedListing( 
-	    Get_normalizer(),
+	    GetNormalizer(),
 	    new ConcreteListing( (String) o.get( "title" ), 
 				 (String) o.get( "manufacturer" ), 
 				 (String) o.get( "currency" ), 
@@ -225,7 +223,7 @@ public class Main
 
 	MatchingEngine engine = new MatchingEngine( new MatcherFactory()
 						    {
-							public Matcher Get_matcher()
+							public Matcher GetMatcher()
 							{
 							    return new DeterministicMatcher();
 							}

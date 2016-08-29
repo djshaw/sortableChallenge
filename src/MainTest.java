@@ -9,7 +9,7 @@ public class MainTest
     public void testNormalizer()
 	throws Exception
     {
-	Method method = Main.class.getDeclaredMethod( "Get_normalizer" );
+	Method method = Main.class.getDeclaredMethod( "GetNormalizer" );
 	Normalizer normalizer = (Normalizer) method.invoke( null );
 
 	assertEquals( null, normalizer.Normalize( null ) );

@@ -25,7 +25,7 @@ txt: $(CHALLENGE_DATA)
 .PHONY: compile
 compile: tags
 	@mkdir -p $(DIR)/obj
-	javac $(DIR)/src/*.java -classpath $(LIBS):$(JUNIT_LIBS) -d $(DIR)/obj
+	javac $(DIR)/src/*.java -classpath $(LIBS):$(JUNIT_LIBS) -d $(DIR)/obj -Xlint:cast -Xlint:deprecation -Xlint:divzero -Xlint:empty -Xlint:finally -Xlint:overrides -Xlint:path -Xlint:serial -Xlint:unchecked
 
 results.txt: compile txt
 	java -cp $(DIR)/obj:$(LIBS) -Dlog4j.configurationFile=$(DIR)/log4j2.xml Main products.txt listings.txt > $@
@@ -41,8 +41,7 @@ validate: results.txt
 # Potential improvement: the test code should be moved to a test directory
 .PHONY: test
 test: compile
-	@# Improvement: add lint switches to find unused variables and the like
-	@# TODO: use a $( find )?
+	@# Improvement: use a $( find )
 	java -cp $(DIR)/obj:$(LIBS) \
 	     org.junit.runner.JUnitCore \
 	     AccentNormalizerTest \
@@ -97,9 +96,10 @@ clean:
 	-rm -rf \
 	    $(CHALLENGE_DATA) \
 	    *.txt \
-	    datasets/Canon_SX130/results.txt \
-	    datasets/PanasonicLumixDMC_FS20P/results.txt \
-	    datasets/Sony_Cybershot_W180/results.txt \
+	    datasets/canon/results.txt \
+	    datasets/panasonic/results.txt \
+	    datasets/sony/results.txt \
+	    datasets/utf-8/results.txt \
 	    listings.html \
 	    obj/ \
 	    products.html \

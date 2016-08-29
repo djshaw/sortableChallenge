@@ -11,9 +11,9 @@ public class ProductView
     @Override
     public String Render()
     {
-	return "<table><tr><td><b>Model</b>:</td><td>" + m_product.Get_model() + "</td></tr>"
-		    + "<tr><td><b>Family</b>:</td><td>" + m_product.Get_family() + "</td></tr>"
-		    + "<tr><td><b>Manufacturer</b>:</td><td>" + m_product.Get_manufacturer() + "</td></tr>"
+	return "<table><tr><td><b>Model</b>:</td><td>" + m_product.GetModel() + "</td></tr>"
+		    + "<tr><td><b>Family</b>:</td><td>" + m_product.GetFamily() + "</td></tr>"
+		    + "<tr><td><b>Manufacturer</b>:</td><td>" + m_product.GetManufacturer() + "</td></tr>"
 	     + "</table>";
     }
 }

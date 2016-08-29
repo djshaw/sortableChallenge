@@ -19,22 +19,22 @@ public class Levenshtein
 	    m_end = end;
 	}
 
-	public int Get_score()
+	public int GetScore()
 	{
 	    return m_score;
 	}
 
-	public int Get_start()
+	public int GetStart()
 	{
 	    return m_start;
 	}
 
-	public int Get_end()
+	public int GetEnd()
 	{
 	    return m_end;
 	}
 
-	public String Get_image()
+	public String GetImage()
 	{
 	    return m_image;
 	}

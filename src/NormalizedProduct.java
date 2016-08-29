@@ -10,40 +10,40 @@ public class NormalizedProduct
     public NormalizedProduct( Normalizer normalizer, Product product )
     {
 	m_product = product;
-	m_normalizedProductName = normalizer.Normalize( m_product.Get_product_name() );
-	m_normalizedManufacturer = normalizer.Normalize( m_product.Get_manufacturer() );
-	m_normalizedModel = normalizer.Normalize( m_product.Get_model() );
-	m_normalizedFamily = normalizer.Normalize( m_product.Get_family() );
+	m_normalizedProductName = normalizer.Normalize( m_product.GetProductName() );
+	m_normalizedManufacturer = normalizer.Normalize( m_product.GetManufacturer() );
+	m_normalizedModel = normalizer.Normalize( m_product.GetModel() );
+	m_normalizedFamily = normalizer.Normalize( m_product.GetFamily() );
     }
 
-    public Product Get_parent_product()
+    public Product GetParentProduct()
     {
 	return m_product;
     }
 
-    public String Get_product_name()
+    public String GetProductName()
     {
 	return m_normalizedProductName;
     }
 
-    public String Get_manufacturer()
+    public String GetManufacturer()
     {
 	return m_normalizedManufacturer;
     }
 
-    public String Get_model()
+    public String GetModel()
     {
 	return m_normalizedModel;
     }
 
-    public String Get_family()
+    public String GetFamily()
     {
 	return m_normalizedFamily;
     }
 
-    public String Get_announced_date()
+    public String GetAnnouncedDate()
     {
-	return m_product.Get_announced_date();
+	return m_product.GetAnnouncedDate();
     }
 
     public String toString()

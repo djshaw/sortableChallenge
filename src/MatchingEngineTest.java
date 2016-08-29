@@ -10,7 +10,7 @@ import org.junit.Test;
 class SubstringMatcherFactory
     extends MatcherFactory
 {
-    public Matcher Get_matcher()
+    public Matcher GetMatcher()
     {
 	return new SubstringMatcher();
     }
@@ -48,7 +48,7 @@ public class MatchingEngineTest
 	MatchingEngine engine = new MatchingEngine( new SubstringMatcherFactory(), 1 );
 	Product product = new ConcreteProduct( "a", "b", "", "", "" );
 
-	HashMap expected = new HashMap< Product, Map< Listing, Integer > >();
+	HashMap< Product, Map< Listing, Integer > > expected = new HashMap< Product, Map< Listing, Integer > >();
 	expected.put( product, new HashMap< Listing, Integer >() );
 	assertEquals( expected, engine.Match( new HashSet< Product >( Arrays.asList( product ) ),
 					      new HashSet< Listing >() ) );
